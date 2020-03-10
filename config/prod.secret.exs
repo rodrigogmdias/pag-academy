@@ -5,7 +5,7 @@
 use Mix.Config
 
 database_url =
-  System.get_env("DATABASE_URL") ||
+  "ecto://#{System.get_env("PGUSER")}:#{System.get_env("PGDPASSWORD")}@#{System.get_env("PGHOST")}/#{System.get_env("PGUSER")}" ||
     raise """
     environment variable DATABASE_URL is missing.
     For example: ecto://USER:PASS@HOST/DATABASE
